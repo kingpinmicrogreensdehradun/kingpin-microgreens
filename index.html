@@ -1,21 +1,434 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Kingpin Microgreens</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kingpin Microgreens | Fresh Microgreens in Dehradun</title>
+
+  <meta name="description" content="Fresh and nutritious microgreens delivered to your doorstep in Dehradun. Trial pack only ₹99.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7fbf5;
+      color: #18351d;
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #24733a;
+    }
+
+    .nav-btn {
+      background: #24733a;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 80px 7%;
+      text-align: center;
+      background: linear-gradient(135deg, #eaf8e7, #f9fff7);
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #174f27;
+    }
+
+    .hero h1 span {
+      color: #3b963f;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #526454;
+    }
+
+    .main-btn {
+      display: inline-block;
+      background: #24733a;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(36,115,58,0.2);
+    }
+
+    section {
+      padding: 65px 7%;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+      color: #174f27;
+    }
+
+    .section-subtitle {
+      color: #667566;
+      margin-bottom: 35px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .feature {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .feature-icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+    }
+
+    .plans {
+      background: #edf8ea;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 35px 25px;
+      box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+      border: 2px solid transparent;
+    }
+
+    .card.highlight {
+      border-color: #3b963f;
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 40px;
+      font-weight: bold;
+      color: #24733a;
+      margin: 15px 0;
+    }
+
+    .card p {
+      color: #667566;
+      margin-bottom: 22px;
+    }
+
+    .order-btn {
+      display: inline-block;
+      background: #24733a;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    .trial {
+      background: #24733a;
+      color: white;
+    }
+
+    .trial h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .trial p {
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+
+    .white-btn {
+      background: white;
+      color: #24733a;
+      display: inline-block;
+      padding: 13px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #123019;
+      color: white;
+      text-align: center;
+      padding: 35px 7%;
+    }
+
+    footer h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #c7d7c8;
+      margin: 5px 0;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25D366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 27px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+      z-index: 20;
+    }
+
+    @media (max-width: 750px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .features,
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .card.highlight {
+        transform: none;
+      }
+
+      header {
+        padding: 15px 5%;
+      }
+
+      section,
+      .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>Kingpin Microgreens</h1>
+  <header>
+    <div class="logo">Kingpin Microgreens</div>
 
-    <p>Fresh Microgreens Delivered in Dehradun</p>
+    <a class="nav-btn"
+       href="https://wa.me/919682769587">
+      Order Now
+    </a>
+  </header>
 
-    <h2>Trial Pack - ₹99</h2>
 
-    <h2>Monthly Plans</h2>
+  <section class="hero">
 
-    <p>₹2500 - 5 Deliveries</p>
-    <p>₹5000 - 10 Deliveries</p>
+    <h1>
+      Fresh <span>Microgreens</span><br>
+      Delivered in Dehradun
+    </h1>
+
+    <p>
+      Small greens. Big nutrition.
+      Freshly harvested microgreens delivered straight to your doorstep.
+    </p>
+
+    <a class="main-btn"
+       href="https://wa.me/919682769587">
+      Order on WhatsApp
+    </a>
+
+  </section>
+
+
+  <section>
+
+    <h2 class="section-title">Why Microgreens?</h2>
+
+    <p class="section-subtitle">
+      Fresh, healthy and packed with natural goodness.
+    </p>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="feature-icon">🌱</div>
+        <h3>Freshly Harvested</h3>
+        <p>Fresh microgreens prepared for your table.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">💚</div>
+        <h3>Nutrition Packed</h3>
+        <p>A simple way to add more nutrients to your everyday meals.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <h3>Home Delivery</h3>
+        <p>Fresh microgreens delivered across Dehradun.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="plans">
+
+    <h2 class="section-title">Choose Your Plan</h2>
+
+    <p class="section-subtitle">
+      Start small or make microgreens a part of your routine.
+    </p>
+
+    <div class="pricing">
+
+      <div class="card highlight">
+
+        <h3>Trial Pack</h3>
+
+        <div class="price">₹99</div>
+
+        <p>
+          Try our fresh microgreens before choosing a monthly plan.
+        </p>
+
+        <a class="order-btn"
+           href="https://wa.me/919682769587">
+          Try Now
+        </a>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>5 Deliveries</h3>
+
+        <div class="price">₹2500</div>
+
+        <p>
+          Get fresh microgreens delivered 5 times every month.
+        </p>
+
+        <a class="order-btn"
+           href="https://wa.me/919682769587">
+          Choose Plan
+        </a>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>10 Deliveries</h3>
+
+        <div class="price">₹5000</div>
+
+        <p>
+          Enjoy fresh microgreens with 10 deliveries every month.
+        </p>
+
+        <a class="order-btn"
+           href="https://wa.me/91XXXXXXXXXX">
+          Choose Plan
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="trial">
+
+    <h2>Ready to Go Green?</h2>
+
+    <p>
+      Start your microgreens journey today with our ₹99 Trial Pack.
+    </p>
+
+    <a class="white-btn"
+       href="https://wa.me/91XXXXXXXXXX">
+      Get Your Trial Pack
+    </a>
+
+  </section>
+
+
+  <footer>
+
+    <h3>Kingpin Microgreens</h3>
+
+    <p>Fresh Microgreens Delivered in Pondha Dehradun</p>
+
+    <p>Made fresh. Delivered fresh.</p>
+
+  </footer>
+
+
+  <a class="whatsapp"
+     href="https://wa.me/919682769587"
+     title="Order on WhatsApp">
+    ☎
+  </a>
 
 </body>
 </html>
